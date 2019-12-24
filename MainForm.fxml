@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainFormController">
+   <children>
+      <TableView fx:id="tableView" prefHeight="300.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="tvNum" maxWidth="40.0" minWidth="35.0" prefWidth="40.0" text="№" />
+          <TableColumn fx:id="tvFrom" minWidth="150.0" prefWidth="150.0" text="От кого" />
+            <TableColumn fx:id="tvTo" minWidth="150.0" prefWidth="150.0" text="Кому" />
+            <TableColumn fx:id="tvDate" maxWidth="85.0" minWidth="80.0" prefWidth="85.0" text="Дата" />
+            <TableColumn fx:id="tvTime" maxWidth="87.0" minWidth="52.0" prefWidth="65.0" text="Время" />
+            <TableColumn fx:id="tvDuration" maxWidth="125.0" minWidth="46.0" prefWidth="115.0" text="Длительность" />
+        </columns>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TableView>
+      <AnchorPane prefHeight="43.0" prefWidth="600.0">
+         <children>
+            <Button layoutX="526.0" layoutY="8.0" mnemonicParsing="false" onAction="#deleteAction" text="Удалить" />
+         </children>
+      </AnchorPane>
+      <Accordion prefHeight="250.0" prefWidth="600.0">
+        <panes>
+          <TitledPane animated="false" text="Добавить звонок">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <Button layoutX="515.0" layoutY="160.0" mnemonicParsing="false" onAction="#addAction" text="Добавить" />
+                        <Label layoutX="42.0" layoutY="34.0" text="№" />
+                        <Label layoutX="28.0" layoutY="74.0" text="От кого" />
+                        <Label layoutX="35.0" layoutY="114.0" text="Кому" />
+                        <Label layoutX="318.0" layoutY="34.0" text="Дата" />
+                        <Label layoutX="314.0" layoutY="74.0" text="Время" />
+                        <Label layoutX="276.0" layoutY="114.0" text="Длительность" />
+                        <TextField fx:id="edTo" layoutX="80.0" layoutY="110.0" />
+                        <TextField fx:id="edFrom" layoutX="80.0" layoutY="70.0" />
+                        <TextField fx:id="edTime" layoutX="361.0" layoutY="70.0" AnchorPane.rightAnchor="80.0" />
+                        <TextField fx:id="edNum" layoutX="80.0" layoutY="30.0" />
+                        <TextField fx:id="edDuration" layoutX="361.0" layoutY="110.0" />
+                        <DatePicker fx:id="edDate" layoutX="361.0" layoutY="30.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="50.0" prefWidth="600.0" text="фильтр">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <Button layoutX="527.0" layoutY="154.0" mnemonicParsing="false" onAction="#applyFilter" text="Фильтр" />
+                        <Label layoutX="86.0" layoutY="37.0" text="Label" />
+                        <Label fx:id="debugLabel" layoutX="86.0" layoutY="91.0" text="Label" />
+                        <Label layoutX="310.0" layoutY="37.0" text="Label" />
+                        <Label layoutX="364.0" layoutY="91.0" text="Label" />
+                        <TextField fx:id="filterFrom" layoutX="135.0" layoutY="33.0" />
+                        <TextField fx:id="filterTo" layoutX="378.0" layoutY="33.0" />
+                        <DatePicker fx:id="filterSince" layoutX="143.0" layoutY="87.0" />
+                        <DatePicker fx:id="filterFor" layoutX="419.0" layoutY="87.0" prefHeight="25.0" prefWidth="163.0" />
+                        <Button layoutX="453.0" layoutY="154.0" mnemonicParsing="false" onAction="#clearFilter" text="Очистить" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</VBox>
